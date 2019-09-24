@@ -1,0 +1,41 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1489375270524'); /* IE9*/
+  src: url('iconfont.eot?t=1489375270524#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1489375270524') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1489375270524') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1489375270524#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-yingyang:before { content: "\e60e"; }
+
+.icon-chanhouhuli:before { content: "\e60b"; }
+
+.icon-4:before { content: "\e69b"; }
+
+.icon-service:before { content: "\e614"; }
+
+.icon-baomu:before { content: "\e603"; }
+
+.icon-dapaizhichizhidexinlai:before { content: "\e620"; }
+
+.icon-keyicms-jiameng:before { content: "\e602"; }
+
+.icon-yuesao:before { content: "\e639"; }
+
+.icon-DrugNurse:before { content: "\e632"; }
+
+.icon-caidantubiao-02:before { content: "\e633"; }
+
+.icon-icon:before { content: "\e61a"; }
+
+.icon-shenfenzheng:before { content: "\e707"; }
+

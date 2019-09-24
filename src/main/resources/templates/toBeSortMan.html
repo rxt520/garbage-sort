@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册成为垃圾分类员</title>
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<link href="css/style1.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+</head>
+<body>
+
+	<div class="aui-register-popup">
+		<div class="aui-register-box">
+			<div class="aui-register-link">
+				<a href="index" class="fl">返回首页</a>
+			</div>
+			<div class="aui-register-logo">
+				<img src="images/logo.png" alt="">
+			</div>
+			<div class="aui-register-form" id="verifyCheck">
+				<form action="BeSortMan" method="post">
+					<div class="aui-register-form-item">
+						<input type="hidden" name="userid" value=${user.userid!'404'}>
+						<input type="hidden" name="servicecount" value=0 }>
+						<input type="hidden" name="score" value=0 }>
+						<input type="hidden" name="picture"  value="images/ly1.jpg">
+						<#if user?exists>
+							<input type="text" disabled name="username"  placeholder=${user.username} class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="username">
+						<#else>
+						<input type="text" name="wage"  placeholder="期望薪资——单位(元/月)" class="txt01 f-r3 required" keycodes="tel" tabindex
+						<input type="text" disabled name="username"  placeholder="请登录" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="">
+					</#if>
+		</div>
+		<div class="aui-register-form-item">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="number" name="age"  placeholder="年龄" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="3" id="age">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="text" name="introduce"  placeholder="个人简介" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="20" id="introduce">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="text" name="idcard"  placeholder="身份证号" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="18" id="IDcard">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="text" name="native_"  placeholder="籍贯" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="native_">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="text" name="nation"  placeholder="民族" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="nation">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="text" name="currentcity"  placeholder="所在城市" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="currentCity">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="hidden" name="state"  placeholder="状态" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="state" value="在岗">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="number" name="wage"  placeholder="期待报酬" class="txt01 f-r3 required" keycodes="tel" tabindex="1"  maxlength="11" id="wage" value="1000">
+					</div>
+					<div class="aui-register-form-item">
+						<input type="submit" id="aui-btn-reg" class="aui-btn-reg" readonly="readonly" value="成为垃圾分类员">
+					</div>
+				</form>
+			</div>
+			<div class="aui-register-bottom">
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript">
+	$(function() {
+		$("#aui-btn-reg").click(function() {
+			var age=$("#age").val();
+			var introduce=$("#introduce").val();
+			var IDcard=$("#IDcard").val();
+			var native_=$("#native_").val();
+			var nation=$("#nation").val();
+			var wage=$("#wage").val();
+			var currentCity=$("#currentCity").val();
+			console.log(age,introduce,IDcard,native_,nation,currentCity);
+			if (age.trim()==0){
+				alert("请输入年龄")
+				return false;
+			}else if (age<18) {
+				alert("未成年不成为分类员！！");
+				return false
+			}
+			if (introduce.trim()<4){
+				alert("请简要介绍自己");
+				return false;
+			}
+			if (IDcard.trim()<18){
+				alert("请输入正确身份证");
+				return false;
+			}
+			if (native_.trim()<2){
+				alert("请输入籍贯");
+				return false;
+			}
+			if (nation.trim()<2){
+				alert("请输入所属民族");
+				return false;
+			}
+			if (currentCity.trim()<2){
+				alert("请输入当前所在城市");
+				return false;
+			}if (wage<1){
+				alert("请输入正确报酬")
+				return false;
+			}
+		});
+	});
+</script>
+
+
+
+</html>

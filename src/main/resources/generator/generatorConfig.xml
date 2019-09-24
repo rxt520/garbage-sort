@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <properties resource="application.properties"/>
+    <!--MyBatis3Simple-->
+    <context id="mysql" targetRuntime="MyBatis3Simple">
+
+        <!-- 通用mapper的代码生成插件 -->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
+        <!-- targetProject:生成model类的位置 -->
+        <javaModelGenerator targetPackage="com.smxy.rxt.sys.model" targetProject=".\src\main\java"/>
+
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="mapper\sys" targetProject=".\src\main\resources"/>
+
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator targetPackage="com.smxy.rxt.sys.mapper" targetProject=".\src\main\java" type="XMLMAPPER"/>
+
+        <!-- 指定数据库表-->
+<!--        <table tableName="userall" domainObjectName="User"/>-->
+<!--        <table tableName="typeall" domainObjectName="Type"/>-->
+<!--        <table tableName="sortman" domainObjectName="SortMan"/>-->
+<!--        <table tableName="service" domainObjectName="ServiceOrder"/>-->
+<!--        <table tableName="comment" domainObjectName="Comment"/>-->
+            <table tableName="orders" domainObjectName="orders"/>
+<!--        <table tableName="receipt" domainObjectName="receipt"/>-->
+    </context>
+</generatorConfiguration>

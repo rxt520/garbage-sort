@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>客户申请订单</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/page.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="iconfont/iconfont.css" rel="stylesheet" />
+<!--<link href="/css/bootstrap.css" rel="stylesheet">-->
+<link href="/css/font-awesome.css" rel="stylesheet">
+<link href="/css/animate.css" rel="stylesheet">
+<link href="/css/style3.css" rel="stylesheet">
+<link href="/plugin/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
+<script src="js/NSW_Index.js"></script>
+
+</head>
+<!--/head-->
+
+<body>
+<header id="header">
+	<nav class="navbar navbar-inverse" role="banner">
+		<div class="container">
+        	<div class="row">
+			<div class="col-md-3 navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index"><img src="images/logo.png" alt="logo" class="img-responsive"></a>
+			</div>
+            <div  class="col-md-9">
+            <div class="tel">24小时服务热线：<span>0598-88888888</span></div>
+			<div class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="index">首页</a></li>
+                    <li><a href="#" >关于我们</a></li>
+                    <li><a href="service" >服务项目</a></li>
+					<li><a href="training">教育培训</a></li>
+					<li><a href="team">精英团队</a></li>
+<!--					<li class="active"><a href="news">行业资讯</a></li>-->
+                    <li><a href="searchGarbageSort_list">搜索垃圾</a></li>
+                    <li><a href="loginout">退出登录</a></li>
+				</ul>
+			</div>
+            </div>
+            </div>
+		</div>
+	</nav>
+</header>
+
+<!--banner-->
+<div class="banner2">
+	<p style="background:url(images/banner1.jpg) no-repeat center; background-size:cover;"></p>
+</div>
+	<div class="clearfix"></div>
+<section class="container">
+    <div class="head">客户申请订单<span>Industry information</span></div>
+    <div class="class_tab">
+        <a class="cur" href="" >订单列表</a>
+    </div>
+	<div class="ibox-content">
+		<div class="row ibox-toolbar">
+			<div class="btn-toolbar col-sm-4">
+				<div class="btn-group">
+					<button id="btn-pay" type="button" class="btn btn-outline btn-default">
+						<i class="glyphicon glyphicon-usd"></i> 支付
+					</button>
+					<button id="btn-refund" type="button" class="btn btn-outline btn-default">
+						<i class="glyphicon glyphicon-remove-circle"></i> 退款
+					</button>
+				</div>
+			</div>
+			<form class="form-inline col-sm-8" onsubmit="return false">
+				<div class="text-right">
+					<div class="form-group">
+						<input name="loginUserId" id="loginUserId" type="hidden" value="${user.userid}">
+						<input name="username" id="username" class="form-control" type="text" placeholder="请输入用户名">
+					</div>
+					<div class="form-group">
+						<input name="mobile" id="mobile" class="form-control" type="text" placeholder="请输入手机号">
+					</div>
+					<div class="form-group">
+						<button class="btn btn-outline btn-default" id="btn-search" type="button">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<table id="data-table"></table>
+	</div>
+        <div class="clearfix"></div>
+		<div class="page">
+<!--			<a href="">上一页 </a><a href='#' class="now">1</a><a href='#'>2</a><a href='#'>3</a><a href='#'>4</a><a href='#' class="next">下一页 </a> -->
+		</div>
+    <div class="clearfix"></div>
+</section>
+    <div class="clearfix"></div>
+<!-- 安全 Start -->
+<section class="service-v1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe620;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>正规公司，值得信赖</h3>
+						<p>工商注册备案，安全可靠！</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe633;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>安全保障，持证上岗</h3>
+						<p>双证齐全（身份证，健康证）疾病排查，身份联网确认</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe614;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>本地服务，更贴心</h3>
+						<p>专注垃圾分类，让您的生活不再受垃圾分类的困扰，让环境更加美好</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--footer-->
+<footer id="footer">
+	<div class="container">
+    	<span><a href="index">首页</a><a href="about" >关于我们 </a><a href="service" >服务项目</a><a href="training">教育培训</a><a href="team">精英团队</a><a href="news">行业资讯</a><a href="comment">客户评价</a><a href="contact">联系我们</a></span>
+        <span>联系地址：三明市三元区荆西街道25号    &nbsp;&nbsp;   联系方式：0598-88888888<br>
+Copyright © 2005-2017 All rights reserved.   京ICP备10012705号-8 </span>
+	</div>
+</footer>
+
+<!-- 全局js -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<!-- 自定义js -->
+<script src="/js/content.js"></script>
+<script src="/plugin/layer/layer.js"></script>
+<script src="/plugin/bootstrap-table/bootstrap-table.js"></script>
+<script src="/plugin/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript">
+	var loginUserId = $("#loginUserId").val();
+	var list_url = 'getUserOrderList?userid='+loginUserId;
+	var pay_Order='pay_Order';
+	var refund_Order='/alipay/tradeRefund';
+	// 初始化表格数据
+	var dataTable = $('#data-table').bootstrapTable({
+		url: list_url,                      //  请求后台的URL
+		method: "get",                      //  请求方式
+		uniqueId: "orderid",                     //  每一行的唯一标识，一般为主键列
+		cache: false,                       // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+		pagination: true,                   //  是否显示分页
+		sidePagination: "server",           //  分页方式：client客户端分页，server服务端分页
+		pageSize: 10,                        //  每页的记录行数
+		queryParamsType: '',
+		// 点分页的页码的时候 或者 调用表格的refresh方法的时候，下面的参数会发送到后台服务器
+		queryParams: function (param) {
+			return {
+				pageNum: param.pageNumber, //页面
+				pageSize: param.pageSize,  // 一页显示多少条
+				username: $("#username").val(), //用户名
+				mobile: $("#mobile").val() //手机号
+			}
+		},
+		columns: [{
+			checkbox: true
+		}, {
+			field: 'userName',
+			title: '分类员名称'
+		}, {
+			field: 'phone',
+			title: '分类员电话'
+		}, {
+			field: 'cname',
+			title: '顾客名称'
+		}, {
+			field: 'cphone',
+			title: '顾客电话'
+		}, {
+			field: 'caddress',
+			title: '顾客地址'
+		}, {
+			field: 'state',
+			title: '预定状态'
+		}, {
+			field: 'creattime',
+			title: '开始时间'
+		}, {
+			field: 'enddate',
+			title: '结束时间'
+		}]
+	});
+	$('#btn-refund').click(function () {
+		// 获取退款数据的ID
+		var rows = $('#data-table').bootstrapTable('getSelections');
+		if (rows.length == 0) {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("请选择数据行!", {icon: 2, offset: '0px'})
+		}else if (rows.length != 1) {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("只能选择一行!", {icon: 2, offset: '0px'})
+		}else if (rows[0].state == "待支付") {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("此订单未付款!", {icon: 2, offset: '0px'})
+		} else if (rows[0].state == "待接单" || rows[0].state == "已接单" ) {
+			layer.confirm("确认退款?", {icon: 3, offset: '0px'}, function () {
+				var param = '?orderid='+rows[0].orderid+"&TradeNo="+rows[0].TradeNo+"&RefundAmount="+rows[0].wage;
+				$.ajax({
+					url: refund_Order + param,
+					type: 'get',
+					dataType:'json',
+					success: function (response) {
+						if (response == 1) {
+							layer.msg("退款成功", {icon: 1, time: 1000}, function () {
+								dataTable.bootstrapTable('refresh', {
+									url: list_url
+								});
+							});
+						} else {
+							layer.msg("退款成功", {icon: 1, time: 1000}, function () {
+								dataTable.bootstrapTable('refresh', {
+									url: list_url
+								});
+							});
+						}
+					}
+				})
+			})
+		}else {
+			layer.alert("选择正确订单!", {icon: 2, offset: '0px'})
+		}
+	});
+
+	$('#btn-pay').click(function () {
+		// 获取支付数据的ID
+		var rows = $('#data-table').bootstrapTable('getSelections');
+		if (rows.length == 0) {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("请选择数据行!", {icon: 2, offset: '0px'})
+		}else if (rows.length != 1) {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("只能选择一行!", {icon: 2, offset: '0px'})
+		}else if (rows[0].state == "待接单" || rows[0].state == "已接单") {
+			//0.感叹号 1.对号 2.叉号 3.问号 4.清理 5.难过  6.高兴 7.感叹号
+			layer.alert("订单已经支付过了!", {icon: 2, offset: '0px'})
+		} else if (rows[0].state == "待支付"){
+			layer.confirm("确认支付?", {icon: 3, offset: '0px'}, function () {
+				var param = '?orderid='+rows[0].orderid+"&wage="+rows[0].wage;
+				$.ajax({
+					url: pay_Order + param,
+					type: 'get',
+					dataType:'json',
+					success: function (data) {
+						var outTradeNo1=data.outTradeNo;
+						var wage1 = data.wage;
+						console.log(outTradeNo1+"----"+wage1);
+						window.location.href="http://sort.smxy.online:9000/alipay/pay_order?outTradeNo="+outTradeNo1+"&wage="+wage1;
+					}
+				})
+			})
+		}else {
+			layer.alert("请选择正确订单!", {icon: 2, offset: '0px'})
+		}
+	});
+
+</script>
+</body>
+</html>

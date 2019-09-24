@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i-admin 后台管理系统 - 给用户分配角色</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/style3.css" rel="stylesheet">
+    <link href="/plugin/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+    <link href="/plugin/iCheck/custom.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper wrapper-content">
+    <div class="ibox">
+        <div class="ibox-title">
+            <h5>给用户分配角色</h5>
+        </div>
+        <div class="ibox-content">
+            <form class="form-horizontal m-t" id="data-form" onsubmit="return false">
+<!--                <input type="text" name="userId" value="${user.userid}">-->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">角色名称：</label>
+                    <div class="col-sm-5">
+<!--                        <#list roleList as role>-->
+                            <div class="checkbox i-checks">
+                                <label>
+                                    <input type="checkbox" name="roleId" value="${role.typeId}" <#if role.checked> checked</#if> > <i></i> ${role.typeName}
+                                </label>
+                            </div>
+<!--                        </#list>-->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-5 col-sm-offset-2">
+                        <button class="btn btn-primary" type="submit">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 全局js -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.js"></script>
+<!-- 自定义js -->
+<script src="/js/content.js"></script>
+<script src="/plugin/layer/layer.js"></script>
+
+<script src="/plugin/validate/jquery.validate.js"></script>
+<script src="/plugin/validate/messages_zh.js"></script>
+
+<script src="/plugin/bootstrap-table/bootstrap-table.js"></script>
+<script src="/plugin/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script src="/plugin/iCheck/icheck.min.js"></script>
+<script>
+    $('.i-checks').iCheck({
+        checkboxClass: 'icheckbox_square-green',
+        radioClass: 'iradio_square-green',
+    });
+</script>
+
+<script>
+    var url_save = 'setrole';
+    $("#data-form").validate({
+        submitHandler: function (form) {
+            $.ajax({
+                url: url_save,
+                type: 'post',
+                data: $("#data-form").serialize(),
+                success: function (response) {
+                    if (response.code == 0) {
+                        layer.msg(response.msg, {icon: 1, time: 1000}, function (index) {
+                            parent.layer.closeAll();
+                        });
+                    } else {
+                        layer.alert(response.msg);
+                    }
+                }
+            })
+        }
+    });
+</script>
+</body>
+</html>

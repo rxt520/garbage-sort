@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>首页</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/page.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="iconfont/iconfont.css" rel="stylesheet" />
+<link href="/plugin/bootstrap-table/bootstrap-table.css" rel="stylesheet">
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
+<script src="js/NSW_Index.js"></script>
+
+
+</head><!--/head-->
+
+<body>
+<header id="header">
+	<nav class="navbar navbar-inverse" role="banner">
+		<div class="container">
+        	<div class="row">
+			<div class="col-md-3 navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index"><img src="images/logo.png" alt="logo" class="img-responsive"></a>
+			</div>
+            <div class="col-md-9">
+            <div class="tel">24小时服务热线：<span>0598-88888888</span></div>
+			<div class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index">首页</a></li>
+                    <li><a href="#" >关于我们</a></li>
+                    <li><a href="service" >服务项目</a></li>
+					<li><a href="training">教育培训</a></li>
+					<li><a href="team">精英团队</a></li>
+					<li><a href="#">行业资讯</a></li>
+                    <li><a href="searchGarbageSort_list">搜索垃圾</a></li>
+                    <li><a href="loginout">退出登录</a></li>
+				</ul>
+			</div>
+            <div class="clearfix"></div>
+            </div>
+            </div>
+		</div>
+	</nav>
+</header>
+    
+    
+<!--banner-->
+<section id="main-slider" class="no-margin">
+    <!-- banner轮播 -->
+<div class="fullSlide">
+<div class="bd">
+    <ul>
+        <li style=" background:url(images/banner1.jpg) top center no-repeat;  background-size:cover;"></li>
+        <li style=" background:url(images/banner2.jpg) top center no-repeat;  background-size:cover;"></li>
+        <li style=" background:url(images/banner3.jpg) top center no-repeat;  background-size:cover;"></li>
+    </ul>
+</div>
+<div class="hd">
+    <ul class="container">
+        <li class="">1</li>
+        <li class="on">2</li>
+        <li class="">3</li>
+    </ul>
+</div>
+<span class="prev" style="opacity: 0.5; display: inline;"></span>
+<span class="next" style="opacity: 0.5; display: inline;"></span>
+</div>
+    <div class="container Online_wp">
+	<#if user.usertypeid==3>
+	<div class="row">
+		<div class="Online">
+			<h3>在线预约</h3>
+			<form id="data-form" onsubmit="return false" class="form-horizontal m-t">
+					<input type="hidden" name="userid" value=${user.userid} id="userid">
+					<ul>
+						<li><span>您的称呼</span><i><input class="m-btn form-control" type="text" name="cname" id="cname"></i></li>
+						<li><span>您的电话</span><i><input class="m-btn" type="text" name="cphone" id="cphone" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')"></i></li>
+						<li><span>联系地址</span><i><input class="m-btn" type="text" name="caddress" id="caddress"></i></li>
+                        <li><span>价格:</span><i><input class="m-btn" type="number" placeholder="愿意付出的价格(元/月)" name="wage" id="wage"></i></li>
+						<li><span>服务类型</span>
+						<i><label><input name="Fruit" type="radio" value="" checked="checked"/>垃圾分类员</label> &nbsp;
+						</i></li>
+						<li><span></span><i><button class="m-submit" value="立即预约" type="submit" onclick="orderMan()" ;return false;>立即预约</button></button></i></li>
+						</li>
+					</ul>
+
+			</form>
+		</div>
+	</div>
+		<#else>
+	</#if>
+</div>
+<div class="clearfix"></div>
+</section><!--/#main-slider-->
+<!-- 安全 Start -->
+<section class="service-v1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe620;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>正规公司，值得信赖</h3>
+						<p>工商注册备案，安全可靠！</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe633;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>安全保障，持证上岗</h3>
+						<p>双证齐全（身份证，健康证）疾病排查，身份联网确认</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe614;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>本地服务，更贴心</h3>
+						<p>专注垃圾分类，让您的生活不再受垃圾分类的困扰，让环境更加美好</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+        
+<!-- 关于我们 Start -->
+<section class="appointment-v1">
+	<div class="container">
+	<div class="row">
+		<div class="left">
+            <a href="team" ><i class="iconfont">&#xe603;</i>找垃圾分类员</a>
+			<#if user?exists>
+				<#if user.usertypeid==3>
+					<a href="toBeSortMan" style="background:#81d110;"><i class="iconfont">&#xe639;</i>当垃圾分类员</a>
+					<a href="userOrder_list" style="background:#2cbeed;"><i class="iconfont">&#xe602;</i>历史订单</a>
+				<#else>
+					<a href="receiptListByUserId" style="background:#81d110;"><i class="iconfont">&#xe639;</i>接受的订单</a>
+					<a href="orderList" style="background:#2cbeed;"><i class="iconfont">&#xe602;</i>接单/抢单</a>
+				</#if>
+			<#else>
+				<a href="login" style="background:#81d110;"><i class="iconfont">&#xe639;</i>未登录！请登录</a>
+			</#if>
+		</div>
+		<div class="right">
+            <h4>为什么要找垃圾分类员/代收垃圾员?</h4>
+            <p>垃圾分类，指按一定规定或标准将垃圾分类储存、分类投放和分类搬运，从而转变成公共资源的一系列活动的总称。分类的目的是提高垃圾的资源价值和经济价值，力争物尽其用。<br>
+				  &emsp;2019年6月25日，生活垃圾分类制度将入法。很多居民对于垃圾分类的知识并不是很了解，且定点投放的时间与他们工作的时间刚好冲突，这时候可以选择垃圾分类员来进行分类，避免被罚款。<br>
+            </p>
+		</div>
+	</div>
+	</div>
+</section>
+
+<!-- 服务项目-->
+<section class="g_zs">
+	<div class="container">
+	<h2>服务项目</h2>
+    <div class="row">
+		<div class="col-sm-3 col-xs-6">
+			<div class="pic">
+				<img class="img-responsive" src="images/ly1.jpg" alt=""><span>垃圾分类员</span>
+				<p>上门帮忙分类垃圾，整理生活垃圾，扔垃圾。</p>
+			</div>
+		</div>
+<!--		<div class="col-sm-3 col-xs-6">-->
+<!--			<div class="pic">-->
+<!--				<img class="img-responsive" src="images/ly2.jpg" alt=""><span>住家/不住家保姆</span>-->
+<!--				<p>家居保洁、衣物洗涤、熨烫与保养、家庭采购、简易家庭餐制作　、看护小孩及婴幼儿辅助护理、接送小孩上学　、家教兼家务、照顾老人或病人　、医院护理、宠物饲养、花草养护等 。</p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<div class="col-sm-3 col-xs-6">-->
+<!--			<div class="pic">-->
+<!--				<img class="img-responsive" src="images/ly3.jpg" alt=""><span>育婴师</span>-->
+<!--				<p>家居保洁、衣物洗涤、熨烫与保养、家庭采购、简易家庭餐制作　、看护小孩及婴幼儿辅助护理、接送小孩上学　、家教兼家务、照顾老人或病人　、医院护理、宠物饲养、花草养护等 。</p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--		<div class="col-sm-3 col-xs-6">-->
+<!--			<div class="pic">-->
+<!--				<img class="img-responsive" src="images/ly4.jpg" alt=""><span>月嫂</span>-->
+<!--				<p>家居保洁、衣物洗涤、熨烫与保养、家庭采购、简易家庭餐制作　、看护小孩及婴幼儿辅助护理、接送小孩上学　、家教兼家务、照顾老人或病人　、医院护理、宠物饲养、花草养护等 。</p>-->
+<!--			</div>-->
+<!--		</div>-->
+    </div>
+	</div>
+</section><!--/#recent-works-->
+
+
+
+<section class="escort">
+	<div class="container">
+		<div class="escort_head"> Ruan.X.T服务保障 <b>六重把关</b></div>
+		<div class="row">
+			<div class="guard_l col-xs-6 col-sm-2 ">
+                <b>严格筛选</b>
+                <img src="images/bz01.jpg" />
+                <p>从年龄、身份、健康及仪态等各方面严格筛选</p>
+			</div>
+			<div class="guard_l col-xs-6 col-sm-2">
+                <b>尽职调查</b>
+                <img src="images/bz02.jpg" />
+                <p>对垃圾分类员的证件进行核实鉴定，对服务过的客户进行满意度回访。</p>
+			</div>
+			<div class="guard_l col-xs-6 col-sm-2">
+                <b>技能测试</b>
+                <img src="images/bz03.jpg" />
+                <p>对通过筛选的垃圾分类员，进行专业理论考试核实操技能测试</p>
+            </div>
+			<div class="guard_l col-xs-6 col-sm-2">
+                <b>综合评级</b>
+                <img src="images/bz04.jpg" />
+                <p>通过工作经历，技能，证书及客户满意度，垃圾分类员个人素养提升等方面进行综合评级</p>
+			</div>
+			<div class="guard_l col-xs-6 col-sm-2">
+                <b>专家培训</b>
+                <img src="images/bz05.jpg" />
+                <p>不论垃圾分类员之前技能如何，进入垃圾分类员Ruan.X.T.企业后都必须经过系统的专业培训</p>
+			</div>
+			<div class="guard_l col-xs-6 col-sm-2">
+                <b>律师支持</b>
+                <img src="images/bz06.jpg" />
+                <p>三明市雄腾律师事务所提供优质、高效、专业、卓有成效的法律服务。</p>
+            </div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<div class="clearfix"></div>
+<div class="user">
+	<div class="container"> 
+	<h2>用户评价</h2>
+	<div class="evaluation row">
+      <div class="video col-md-8">
+          <a href="#"><img src="images/video.jpg" /></a>
+      </div>
+      <div class="evaluation_l col-md-4">
+            <font>真实评价，看小主们怎么说！</font>
+           <div class="evaluation_j" >
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>  
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，打扫的非常干净。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>
+               <dl>
+                   <dt><img src="images/pingjia.jpg" /></dt>
+                   <dd><b>13r139****48发表于：1小时前</b></dd>
+                   <dd> 非常好，分类的非常好，再也不用被罚款了。</dd>
+               </dl>  
+           </div>
+      </div>
+	</div>
+	</div>
+</div>
+
+<!-- 荣誉-->
+<section class="g_ry">    
+	<div class="slideGroup" >
+		<div class="parBd">
+        	<div class="container">
+            <h2>资质荣誉</h2>
+			<div class="slideBox">
+				<a class="sPrev" href="javascript:void(0)"></a>
+					<ul>
+						<li>
+							<div class="pic">
+                                <img class="img-responsive" src="images/ho_01.jpg" alt="">
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+                                <img class="img-responsive" src="images/ho_02.jpg" alt="">
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+                                <img class="img-responsive" src="images/ho_03.jpg" alt="">
+							</div>
+						</li>
+						<li>
+							<div class="pic">
+                                <img class="img-responsive" src="images/ho_04.jpg" alt="">
+							</div>
+						</li>
+                        <li>
+							<div class="pic">
+                                <img class="img-responsive" src="images/ho_05.jpg" alt="">
+							</div>
+						</li>
+					</ul>
+				<a class="sNext" href="javascript:void(0)"></a>
+			</div><!-- slideBox End -->
+            </div>
+		</div><!-- parBd End -->
+	</div>
+</section><!--/#recent-works-->
+
+<section id="partner">
+	<div class="partners" >
+		<div class="parBd">
+        	<div class="container">
+            <div class="par_t">合<br>作<br>伙<br>伴</div>
+			<div class="slideBox">
+					<!--<a class="sPrev" href="javascript:void(0)"></a>-->
+					<ul>
+					<li><i><img class="img-responsive wow fadeInDown" src="images/dx.jpg"></i></li>
+					<li><i><img class="img-responsive wow fadeInDown" src="images/bd.jpg"></i></li>
+					<li><i><img class="img-responsive wow fadeInDown" src="images/58.jpg"></i></li>
+					<li><i><img class="img-responsive wow fadeInDown" src="images/yk.jpg"></i></li>
+					<li><i><img class="img-responsive wow fadeInDown" src="images/zs.jpg"></i></li>
+					</ul>
+					<!--<a class="sNext" href="javascript:void(0)"></a>-->
+			</div><!-- slideBox End -->
+			</div>
+		</div><!-- parBd End -->
+        
+	</div>
+</section><!--/#partner-->
+
+<!--footer-->
+<footer id="footer">
+	<div class="container">
+    	<span><a href="index">首页</a><a href="about" >关于我们 </a><a href="service" >服务项目</a><a href="training">教育培训</a><a href="team">精英团队</a><a href="news">行业资讯</a><a href="evaluation.html">客户评价</a><a href="contact">联系我们</a></span>
+        <span>联系地址：三明市三元区荆西街道25号  &nbsp;&nbsp;   联系方式：0598-88888888<br>
+Copyright © 2005-2019 All rights reserved.   京ICP备10012705号-8 </span>
+	</div>
+</footer>
+<script src="/plugin/validate/jquery.validate.js"></script>
+<script src="/plugin/validate/messages_zh.js"></script>
+
+<script src="/plugin/bootstrap-table/bootstrap-table.js"></script>
+<script src="/plugin/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+<script type="text/javascript">
+    /*
+    SuperSlide组合注意：
+    1、内外层mainCell、targetCell、prevCell、nextCell等对象不能相同，除非特殊应用；
+    2、注意书写顺序，通常先写内层js调用，再写外层js调用
+    */
+
+    /* 内层图片滚动切换 */
+    jQuery(".partners .slideBox").slide({
+		mainCell:"ul",
+		vis:5,
+		prevCell:".sPrev",
+		nextCell:".sNext",
+		effect:"leftLoop"
+		});
+
+    /* 内层图片滚动切换 */
+    jQuery(".slideGroup .slideBox").slide({
+		mainCell:"ul",
+		vis:5,
+		prevCell:".sPrev",
+		nextCell:".sNext",
+		effect:"leftLoop"
+		});
+    /* 外层tab切换 */
+    jQuery(".news").slide({
+		titCell:".parHd li",
+		mainCell:".parBd"
+		});
+    
+    function orderMan() {
+		var userid=$("#userid").val();
+		var cname=$("#cname").val();
+		var cphone=$("#cphone").val();
+		var caddress=$("#caddress").val();
+		var cwage = $("#wage").val();
+        if (cname.trim()<4){
+            alert("客户名称不能小于4个字符");
+            return false;
+        }
+        if (cphone.trim()<11){
+            alert("请输入11位手机号");
+            return false;
+        }
+        if (caddress.trim()<2){
+            alert("请输入详细地址");
+            return false;
+        }
+        if (cwage<1){
+            alert("请输入正数");
+            return false;
+        }
+
+		$.ajax({
+			type:"get",
+			url:"ImOrders",
+			data:{
+				userid : userid ,
+				cname : cname,
+				cphone : cphone ,
+				caddress : caddress,
+                wage :cwage
+			},
+			dataType:'json',
+			success: function(data){
+				var outTradeNo1=data.outTradeNo;
+				var wage1 = data.wage;
+				console.log(outTradeNo1+"----"+wage1);
+				window.location.href="http://sort.smxy.online:9000/alipay/pcPay?outTradeNo="+outTradeNo1+"&wage="+wage1;
+			}
+		});
+	}
+</script>
+</body>
+</html>

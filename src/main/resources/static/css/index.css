@@ -1,0 +1,97 @@
+*{margin:0px;padding:0px;}
+ul,li,ol{list-style:none;}
+a{text-decoration:none;color:#666;font-size:16px;}
+body{width:100%;height:auto;font-size:14px;font-family:"微软雅黑"}
+/*头部*/
+.header{width:100%;height:auto;}
+.logo{width:1200px;height:90px;margin:0 auto;padding:10px;}
+.logo img{float:left;height:60px;width:254px;margin-top:10px;padding:0 0 0 8px;}
+.hours p{float:right;margin-right:7px;}
+.hours  span{font-size:22px;color:#f8b502;font-weight:bold;}
+.hours ul{overflow:hidden;float:right;width:880px;margin-top:2px;margin-lrft:37px;}
+.hours ul a:hover{color:#0089e1;}
+.hours ul li{float:left;width:108px;height:20px;border-right:1px solid #d1d1d1;line-height:20px;text-align:center;}
+.clear{clear:both;}
+/*轮播图*/
+#banner{width:100%;height:auto;margin-top:9px;}
+.img{ width: 100%; position: relative; height: 463px;}
+.img-box li{position: absolute;cursor: pointer;top: -7px;}
+.middle{width:1200px;height:400px;margin:0 auto;position: absolute;top:112px;left:360px; }
+.Online{background:#FFF;width:385px; height:387px;position: absolute;right:20px;top:40px;background-color:#fcfcfc;border-radius:4px;}
+.Online_make h3{margin:0 auto;border-bottom:1px solid #dedede;height:40px;width:280px;line-height:40px;text-align:center;color:#a3a3a3}
+.Online_make ul{height:350px;width:300px;margin:0 auto;padding:10px 0 ;}
+.Online_make ul li{height:40px;width:300px;padding:10px 0}
+.Online_make ul span{ margin-right:10px;}
+.m-btn{height:28px;width:200px;border-radius:4px;border:1px solid #ccc;}
+.m-submit{ background-color:#2cbeed;border:none;width:200px;height:36px;border-radius:4px;color:#ffffff;margin-left:40px;font-size:16px;}
+/*公司荣誉*/
+.formal{width:1200px;height:auto;margin:0 auto;background:#fafafa}
+.parcel{float:left;overflow:hidden;width:400px;height:100px;}
+.formal_company{float:left;padding:20px;}
+.formal_company img{float:left;overflow:hidden;}
+.security{float:left;margin-left:10px;}
+.security p{display:block;padding:10px 0 ;width:250px;}
+/*乐妈妈*/
+.nanny{width:100%;height:auto;}
+.nanny_l{width:1200px;height:300px;margin:0 auto;margin-top:60px;}
+.nanny_f{width:350px;height:256px;float:left;}
+.nanny_f ul li{width:340px;height:70px;line-height:70px;overflow:hidden;}
+.nanny_f ul h3{font-size:20px;color:#FFF;}
+.nanny_f ul li img{width:40px;height:40px;float:left;padding:15px 10px;;margin-left:65px;}
+.nanny_f ul li{background:#f8b502;}
+.nanny_f ul li:nth-child(2){background:#81d110;margin-top:20px;}
+.nanny_f ul li:nth-child(3){background:#2cbeed;margin-top:20px;}
+.nanny_v{width:810px;height:256px;float:right;background:url(../images/jiazhen_bj.jpg)no-repeat center;border:3px solid #80bd34;}
+.nanny_v h1{padding:20px;font-weight:bold;color:#767676}
+.nanny_v p{display:block;margin-left:20px;color:#494949;font-size:16px;}
+/*我们的服务项目*/
+.project{width:100%;height:auto;margin-top:50px;}
+.picture{width:1200px;height:400px;margin:0 auto; margin-top:50px;}
+ h2{height:40px;width:226px;color:#2cbeed;text-align:center;position:relative;left;106px;top:-15px; background:#fff; font-size:28px;}
+.picture ul{width:1200px;height:400px;overflow:hidden;}
+.picture ul li{float:left;width:278px;border:1px solid #eeeeee; margin-right:20px;}
+.picture ul li:nth-chlid(4){ margin-right:0}
+.picture ul li dl{margin-left:10px;}
+/*三证上岗 六证护航*/
+.escort{background:url(../images/anquan_bj.jpg)no-repeat center;width:100%;height:560px;}
+.guard{width:1200px;height:560px;margin:0 auto;}
+.escort_l{width:800px;height:100px;text-align:center;margin:0 auto;padding:30px 0 20px 0 ;}
+.escort_l b{display:block;font-size:40px;color:#eda72c;font-weight:bold;text-shadow: 3px 0px 0px #fff}
+.escort_l p{display:block;font-size:18px;margin-top:20px;}
+.escort_l p i{font-style:normal;color:#ff7800;}
+.guard_l{width:385px;height:135px;float:left;position:relative;z-index:9999;margin-top:60px;padding:0 10px 0 0 ;}
+.guard_l img {float:left;width:100px;height:100px;margin-top:14px;}
+.guard_r{float:right;width:285px;height:130px;position:absolute;left:70px;z-index:-1}
+.guard_r b{padding:10px 0px;display:block;font-size:18px;margin-left:40px;}
+.guard_r p{width:250px;margin-left:40px;}
+/*用户评价*/
+.user{width:100%;height:auto;margin-top:78px;}
+.evaluation{width:1200px;height:500px;margin:0 auto;margin-top:69px;}
+.video img{width:722px;height:452px;float:left;overflow:hidden;}
+.evaluation_l{width:433px;height:451px;float:left;background:#6ed2f3;margin-left:45px;}
+.evaluation_l b{color:#FFF;font-size:18px;padding:24px 0 16px 18px;display:block; }
+.evaluation_j{width:394px;height:369px;background:#FFF;margin:0 auto;}
+.evaluation_g{width:378px;height:60px;border-bottom:1px solid #eef2f3;margin:0 auto;padding:12px 0 0 0px;}
+.evaluation_g img{float:left;overflow:hidden;width:46px;height:46px;}
+.evaluation_g dl{float:left;margin-left:23px;}
+/*资质荣誉*/
+.honor{width:100%;height:auto;margin-top:50px;}
+.honor_t img{width:100%;height:35px;}
+.honor_t b{position:relative;left:258px;top:-21px;color:#2cbeed;font-size:21px;}
+.honor_tu{width:1200px;height:300px;margin:0 auto;margin-top:60px;}
+.honor_tu ul{overflow:hidden;float:left;}
+.honor_tu ul li{float:left;height:268px;width:196px;margin-left:38px;}
+.honor_tu ul li:nth-chlid(4){ margin-right:0}
+/*合作伙伴*/
+.cooperation{width:100%;height:auto;margin-top:80px;}
+.partner{width:1200px;height:170px;margin:0 auto;}
+.partner ul{overflow:hidden;float:left;}
+.partner ul li{float:left;width:220px;height:160px;padding:10px;}
+.partner ul img{width:200px;height:130px;}
+/*底部*/
+.footer{width:100%;height:auto;margin-top:43px;}
+.footer-bar{width:1200px;height:200px;margin:0 auto;}
+.footer-bar ul{text-align:center;}
+.footer-bar ul li{ display:inline-block; height:30px; }
+.footer-bar ul li a{display:inline-block; border-right:1px solid #7a7a7a; padding:0 10px;}
+.footer-bar p{display:block;text-align:center}

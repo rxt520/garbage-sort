@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.Comment">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="commentId" jdbcType="INTEGER" property="commentid" />
+    <result column="sortId" jdbcType="INTEGER" property="sortid" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+</mapper>

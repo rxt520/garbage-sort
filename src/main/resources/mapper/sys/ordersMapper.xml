@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.ordersMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.orders">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="orderid" jdbcType="INTEGER" property="orderid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="cname" jdbcType="VARCHAR" property="cname" />
+    <result column="cphone" jdbcType="VARCHAR" property="cphone" />
+    <result column="caddress" jdbcType="VARCHAR" property="caddress" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="wage" jdbcType="INTEGER" property="wage" />
+    <result column="TradeNo" jdbcType="VARCHAR" property="tradeno" />
+    <result column="outTradeNo" jdbcType="VARCHAR" property="outtradeno" />
+  </resultMap>
+
+  <select id="findOrderList" resultType="hashmap">
+        select * from orders join userall on orders.userid=userall.userId where state=#{orderState} limit #{page},#{pageSize}
+  </select>
+
+  <select id="findAllOrderByState" resultType="hashmap">
+        select * from orders join userall on orders.userid=userall.userId where state=#{orderState}
+  </select>
+
+  <select id="FindOrderIdByOutTranNo" parameterType="String" resultType="Integer">
+        select orderid from orders where outTradeNo=#{OutTradeNo}
+  </select>
+
+
+  <select id="getAllUserOrder" resultType="hashmap">
+    SELECT * from orders LEFT JOIN receipt on receipt.orderid=orders.orderid  left join userall on userall.userId = receipt.userid where orders.userid=#{userid}
+  </select>
+
+  <select id="getUserOrderList" resultType="hashmap">
+        SELECT * from orders LEFT JOIN receipt on receipt.orderid=orders.orderid  left join userall on userall.userId = receipt.userid where orders.userid=#{userid} ORDER BY state desc limit #{page},#{pageSize}
+  </select>
+</mapper>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>联系我们</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/animate.min.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/page.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="iconfont/iconfont.css" rel="stylesheet" />
+   
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.SuperSlide.js" type="text/javascript"></script>
+<script src="js/NSW_Index.js"></script>
+
+</head>
+<!--/head-->
+
+
+<body>
+<header id="header">
+	<nav class="navbar navbar-inverse" role="banner">
+		<div class="container">
+        	<div class="row">
+			<div class="col-md-3 navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index"><img src="images/logo.png" alt="logo"  class="img-responsive"></a>
+			</div>
+            <div  class="col-md-9">
+            <div class="tel">24小时服务热线：<span>0598-88888888</span></div>
+			<div class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li><a href="index">首页</a></li>
+                    <li><a href="#" >关于我们</a></li>
+					<!--<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">关于我们 <i class="fa fa-angle-down"></i></a>
+						<ul class="dropdown-menu">
+						<li><a href="about">公司介绍</a></li>
+						<li><a href="honor">资质荣誉</a></li>
+						<li><a href="video">视频展示</a></li>
+						</ul>
+					</li>-->
+                    <li><a href="service" >服务项目</a></li>
+					<li><a href="training">教育培训</a></li>
+					<li><a href="team">精英团队</a></li>
+					<li><a href="#">行业资讯</a></li>
+                    <li><a href="searchGarbageSort_list">搜索垃圾</a></li>
+                    <li class="active"><a href="contact">联系我们</a></li>
+				</ul>
+			</div>
+            </div>
+            </div>
+		</div>
+	</nav>
+</header>
+    
+<!--banner-->
+<div class="banner2">
+	<p style="background:url(images/banner1.jpg) no-repeat center; background-size:cover;"></p>
+</div>
+<div class="clearfix"></div>
+<section class="container">
+	<div class="c_title"><font>联系我们</font> <span>当前位置：<a href="index">首页</a>&gt;联系我们</span></div>
+	<div class="contact">
+    	<div class="fl">
+			<p>商家名称：乐妈妈家政<br>
+联  系  人：王小姐<br>
+电子邮箱：fzkvysdoAGEP@58.com<br>
+联系电话：0598-88888888<br>
+联系电话：18682174006<br>
+联系地址：三明市三元区荆西街道25号 <br>
+服务区域： 深圳 
+            </p>
+        </div>
+        <div class="fr message">
+        	<div class="row"><input type="text" placeholder="姓名"></div>
+            <div class="row"><input type="text" placeholder="电话"></div>
+            <div class="row"><textarea  placeholder="内容"></textarea></div>
+            <div class="row"><input class="message_bton" type="button" value="提交"></div>
+        </div>
+
+
+
+
+
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+<!--百度地图容器-->
+<div style="width:100%;height:350px;border:#ccc solid 1px;" id="dituContent"></div>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(113.861365,22.574211);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+                //向地图中添加比例尺控件
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"乐妈妈安心品牌家政",content:"深圳宝安西乡街道兴业路西南侧碧海富通城1栋110",point:"113.86283|22.573644",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+</script>
+
+
+
+
+
+
+
+<br>
+
+
+        </div>
+    <div class="clearfix"></div>
+</section>
+
+
+<!-- 安全 Start -->
+<section class="service-v1">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe620;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>正规公司，值得信赖</h3>
+						<p>工商注册备案，安全可靠！</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe633;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>安全保障，持证上岗</h3>
+						<p>双证齐全（身份证，健康证）疾病排查，身份联网确认</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+			<div class="col-sm-4 col-md-4 col-lg-4">
+				<div class="item">
+					<div class="icon">
+						<i class="iconfont">&#xe614;</i>
+					</div>
+					<div class="text">
+						<div class="inner">
+						<h3>本地服务，更贴心</h3>
+						<p>专注垃圾分类，让您的生活不再受垃圾分类的困扰，让环境更加美好</p>
+						</div>
+					</div>							
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!--footer-->
+<footer id="footer">
+	<div class="container">
+    	<span><a href="index">首页</a><a href="about" >关于我们 </a><a href="service" >服务项目</a><a href="training">教育培训</a><a href="team">精英团队</a><a href="news">行业资讯</a><a href="comment">客户评价</a><a href="contact">联系我们</a></span>
+        <span>联系地址：三明市三元区荆西街道25号    &nbsp;&nbsp;   联系方式：0598-88888888<br>
+Copyright © 2005-2017 All rights reserved.   京ICP备10012705号-8 </span>
+	</div>
+</footer>
+</body>
+</html>

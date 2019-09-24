@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.receiptMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.receipt">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="receiptid" jdbcType="INTEGER" property="receiptid" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="orderid" jdbcType="INTEGER" property="orderid" />
+    <result column="creattime" jdbcType="TIMESTAMP" property="creattime" />
+    <result column="enddate" jdbcType="TIMESTAMP" property="enddate" />
+  </resultMap>
+
+  <select id="getReceipt" parameterType="Integer" resultType="hashmap">
+        SELECT * from receipt join orders on receipt.orderid = orders.orderid join sortman on sortman.userId=receipt.userid join userall on sortman.userId=userall.userId limit #{page},#{pageSize}
+  </select>
+
+  <select id="getReceiptByuserId" parameterType="Integer" resultType="hashmap">
+        SELECT * from receipt join orders on receipt.orderid = orders.orderid join sortman on sortman.userId=receipt.userid join userall on sortman.userId=userall.userId
+  </select>
+</mapper>

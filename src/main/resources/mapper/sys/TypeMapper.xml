@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.TypeMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.Type">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="typeId" jdbcType="INTEGER" property="typeid" />
+    <result column="typeName" jdbcType="VARCHAR" property="typename" />
+  </resultMap>
+</mapper>

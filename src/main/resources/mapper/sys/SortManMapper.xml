@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.SortManMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.SortMan">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="sortId" jdbcType="INTEGER" property="sortid" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="serviceCount" jdbcType="INTEGER" property="servicecount" />
+    <result column="wage" jdbcType="DECIMAL" property="wage" />
+    <result column="score" jdbcType="DECIMAL" property="score" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="IDcard" jdbcType="VARCHAR" property="idcard" />
+    <result column="native_" jdbcType="VARCHAR" property="native" />
+    <result column="nation" jdbcType="VARCHAR" property="nation" />
+    <result column="currentCity" jdbcType="VARCHAR" property="currentcity" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="introduce" jdbcType="LONGVARCHAR" property="introduce" />
+  </resultMap>
+
+
+  <insert id="toAddSortMan" parameterType="com.smxy.rxt.sys.model.SortMan">
+        insert into sortman(userid,serviceCount,wage,score,age,introduce,IDcard,native_,nation,currentCity,state,picture)value(#{userid},#{servicecount},#{wage},#{score},#{age},#{introduce},#{idcard},#{native_},#{nation},#{currentcity},#{state},#{picture})
+  </insert>
+
+  <select id="sortManList" resultType="hashmap">
+        select * from userall join sortman on userall.userid = sortman.userid
+  </select>
+
+  <select id="findMan" resultType="hashmap" parameterType="Integer">
+        select * from userall join sortman on userall.userid = sortman.userid where sortman.userid=#{userId}
+  </select>
+
+  <select id="sortManListByPage" resultType="hashmap" >
+        select * from userall join sortman on userall.userid = sortman.userid limit #{page},#{pageSize}
+  </select>
+
+</mapper>

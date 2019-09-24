@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.smxy.rxt.sys.model.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="passWord" jdbcType="VARCHAR" property="password" />
+    <result column="userTypeId" jdbcType="INTEGER" property="usertypeid" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+  </resultMap>
+
+  <insert id="addUser" parameterType="com.smxy.rxt.sys.model.User">
+        insert into userall(username,password,usertypeid,phone,email,address)value(#{username},#{password},#{usertypeid},#{phone},#{email},#{address})
+  </insert>
+
+  <select id="login" parameterType="com.smxy.rxt.sys.model.User" resultType="com.smxy.rxt.sys.model.User">
+        select * from userall where username=#{username} and password=#{password}
+  </select>
+
+  <update id="toEditUserType" parameterType="Integer" >
+        update userall set userTypeId='2' where userid=#{userid}
+  </update>
+
+  <update id="resetPassword">
+        update userall set passWord=#{password} where phone=#{phone} and userName=#{username}
+  </update>
+
+</mapper>

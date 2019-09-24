@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smxy.rxt.sys.mapper.backstageMapper">
+    <select id="userList" resultType="hashmap">
+        SELECT * from userall join typeall on userall.userTypeId = typeall.typeId limit #{page},#{pageSize}
+    </select>
+
+    <delete id="deleteSortManByUserId" parameterType="Integer">
+        delete from sortman where userId=#{userId}
+    </delete>
+
+    <select id="getReceipt" resultType="hashmap">
+        SELECT * from receipt join orders on receipt.orderid = orders.orderid join sortman on sortman.userId=receipt.userid join userall on sortman.userId=userall.userId limit #{page},#{pageSize}
+    </select>
+</mapper>
